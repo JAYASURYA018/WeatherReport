@@ -1,11 +1,15 @@
 const express = require("express");
 const app = express();
 const dfff = require("dialogflow-fulfillment");
-const port = process.env.PORT || 4444;
+
 const axios = require("axios");
+
+const dotenv = require("dotenv");
 
 // const nodefetch = require("node-fetch");
 
+dotenv.config();
+const port = process.env.PORT;
 app.use(express.json());
 
 // var admin = require("firebase-admin");
@@ -134,4 +138,4 @@ app.post("/chat", async function (req, res) {
   // }
 });
 
-app.listen(port, () => console.log("server is live port at 3333"));
+app.listen(port, () => console.log(`server is  live on port ${port}`));
