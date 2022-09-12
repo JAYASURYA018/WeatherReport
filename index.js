@@ -94,7 +94,7 @@ app.post("/chat", async function (req, res) {
 
     // console.log(data);
 
-    res.send(JSON.stringify({ fullfillment: data }));
+    res.send(JSON.stringify({ weather: data }));
     console.log(`Current weather in ${city} will be ${data}`);
   } catch (error) {
     error;
