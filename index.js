@@ -9,7 +9,7 @@ const dotenv = require("dotenv");
 // const nodefetch = require("node-fetch");
 
 dotenv.config();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 5555;
 app.use(express.json());
 
 // var admin = require("firebase-admin");
