@@ -136,6 +136,5 @@ app.post("/chat", async function (req, res) {
   //     }
   //   }
   // }
+  app.listen(PORT, () => console.log(`server is  live on port ${PORT}`));
 });
-
-app.listen(PORT, () => console.log(`server is  live on port ${PORT}`));
