@@ -22,21 +22,21 @@ app.use(express.json());
 // });
 
 // const axios = require('axios')
-// app.get("/", async function (req, res) {
-//   const data = [];
-//   let url =
-//     "https://api.openweathermap.org/data/2.5/forecast?q=secunderabad&appid=c1bea648f3c6db74595c7c465820709c";
+app.get("/", async function (req, res) {
+  const data = [];
+  let url =
+    "https://api.openweathermap.org/data/2.5/forecast?q=secunderabad&appid=c1bea648f3c6db74595c7c465820709c";
 
-//   await axios
-//     .get(url)
-//     .then((res) => {
-//       data.push(res.data.list[0].weather[0].description);
-//     })
-//     .catch((error) => {
-//       console.log(error);
-//     });
-//   res.json(data);
-// });
+  await axios
+    .get(url)
+    .then((res) => {
+      data.push(res.data.list[0].weather[0].description);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  res.send(data);
+});
 
 // app.get("/", async function (req, res) {
 //   try {
@@ -68,21 +68,13 @@ app.use(express.json());
 //   agent.handlerequest(intentmap);
 // });
 
-app.get("/chat", async function (req, res) {
+app.post("/chat", async function (req, res) {
   // var request = require("request");
   try {
     var city = "krypton";
     city = req.body.queryResult.parameters.city;
     req.body.queryResult.parameters["city"];
-    var datestring = req.body.queryResult.parameters.date;
-    var date = new Date(datestring);
-    var month = date.getMonth();
-    var day = date.getDate();
     console.log("city" + " " + city);
-    console.log("datestring" + " " + datestring);
-    console.log("month is " + month);
-    console.log("day is " + day);
-
     if (city == null) {
       city = "singapore";
     }
@@ -102,8 +94,8 @@ app.get("/chat", async function (req, res) {
 
     // console.log(data);
 
-    res.send(JSON.stringify({ fulfillmentText: data }));
-    console.log("fulfillmentText", data);
+    res.send(JSON.stringify(`Current weather in ${city} will be ${data}`));
+    console.log(`Current weather in ${city} will be ${data}`);
   } catch (error) {
     error;
   }
