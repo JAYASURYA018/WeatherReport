@@ -9,7 +9,7 @@ const dotenv = require("dotenv");
 // const nodefetch = require("node-fetch");
 
 dotenv.config();
-const port = process.env.PORT;
+const PORT = process.env.PORT;
 app.use(express.json());
 
 // var admin = require("firebase-admin");
@@ -100,7 +100,7 @@ app.post("/chat", async function (req, res) {
       });
     // res.json(data);
 
-    console.log(data);
+    // console.log(data);
 
     res.send(JSON.stringify({ fulfillmentText: data }));
     console.log("fulfillmentText", data);
@@ -138,4 +138,4 @@ app.post("/chat", async function (req, res) {
   // }
 });
 
-app.listen(port, () => console.log(`server is  live on port ${port}`));
+app.listen(PORT, () => console.log(`server is  live on port ${PORT}`));
