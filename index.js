@@ -22,21 +22,21 @@ app.use(express.json());
 // });
 
 // const axios = require('axios')
-app.get("/", async function (req, res) {
-  const data = [];
-  let url =
-    "https://api.openweathermap.org/data/2.5/forecast?q=secunderabad&appid=c1bea648f3c6db74595c7c465820709c";
+// app.get("/", async function (req, res) {
+//   const data = [];
+//   let url =
+//     "https://api.openweathermap.org/data/2.5/forecast?q=secunderabad&appid=c1bea648f3c6db74595c7c465820709c";
 
-  await axios
-    .get(url)
-    .then((res) => {
-      data.push(res.data.list[0].weather[0].description);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-  res.json(data);
-});
+//   await axios
+//     .get(url)
+//     .then((res) => {
+//       data.push(res.data.list[0].weather[0].description);
+//     })
+//     .catch((error) => {
+//       console.log(error);
+//     });
+//   res.json(data);
+// });
 
 // app.get("/", async function (req, res) {
 //   try {
@@ -68,7 +68,7 @@ app.get("/", async function (req, res) {
 //   agent.handlerequest(intentmap);
 // });
 
-app.post("/chat", async function (req, res) {
+app.get("/chat", async function (req, res) {
   // var request = require("request");
   try {
     var city = "krypton";
