@@ -72,7 +72,7 @@ app.post("/chat", async function (request, response) {
   // var request = require("request");
 
   var city = "krypton";
-  city = req.body.queryResult.parameters.city;
+  city = request.body.queryResult.parameters.city;
   request.body.queryResult.parameters["city"];
   console.log("city" + " " + city);
   if (city == null) {
@@ -90,12 +90,7 @@ app.post("/chat", async function (request, response) {
     .catch((error) => {
       console.log(error);
     });
-  response.send(
-    JSON.stringify({
-      data: "hi",
-      fullfillment: data,
-    })
-  );
+  response.send(JSON.stringify({ fullfillment: data[0] }));
   console.log(`Current weather in ${city} will be ${data}`);
 });
 
