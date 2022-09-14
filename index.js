@@ -35,7 +35,7 @@ app.get("/", async function (req, res) {
     .catch((error) => {
       console.log(error);
     });
-  res.send(data[0]);
+  res.send(`Current weather in secunderabad will be ${data} ☁`);
 });
 
 // app.get("/", async function (req, res) {
