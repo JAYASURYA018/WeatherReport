@@ -92,7 +92,7 @@ app.post("/chat", async function (request, response) {
     });
   response.send(
     JSON.stringify({
-      fulfillmentText: `Current weather in ${city} will be ${data}`,
+      fulfillmentText: `Current weather in ${city} will be ${data} ☁`,
     })
   );
 });
