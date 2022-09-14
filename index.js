@@ -35,7 +35,7 @@ app.get("/", async function (req, res) {
     .catch((error) => {
       console.log(error);
     });
-  res.send(data);
+  res.send(data[0]);
 });
 
 // app.get("/", async function (req, res) {
@@ -90,7 +90,7 @@ app.post("/chat", async function (request, response) {
     .catch((error) => {
       console.log(error);
     });
-  response.send(JSON.stringify({ fullfillment: data[0] }));
+  response.send(JSON.stringify({ fulfillmentMessages: data[0] }));
   console.log(`Current weather in ${city} will be ${data}`);
 });
 
