@@ -90,8 +90,11 @@ app.post("/chat", async function (request, response) {
     .catch((error) => {
       console.log(error);
     });
-  response.send(JSON.stringify({ fulfillmentText: data }));
-  console.log(`Current weather in ${city} will be ${data}`);
+  response.send(
+    JSON.stringify({
+      fulfillmentText: `Current weather in ${city} will be ${data}`,
+    })
+  );
 });
 
 //   {
